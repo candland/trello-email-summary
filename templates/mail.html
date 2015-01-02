@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{name}}</title>
+  </head>
+  <body style="background: {{prefs.backgroundColor}}; font-family: verdana, sans-serif; font-size: 90%">
+    <header style="background: {{prefs.backgroundColor}}; margin: 15px 0;">
+      <h1 style="color: white;">{{name}}
+        <a href="{{{shortUrl}}}" style="color: white;">&gt;</a>
+      </h1>
+    </header>
+   
+    {{#lists}}
+    <section style="background: silver; padding: 8px; margin: 10px;">
+      <h2 style="margin: 0;">{{name}}</h2>
+      <ul style="background: white; list-style-type: none; margin: 0; padding: 0;">
+        {{#cards}}
+        <li style="padding: 8px">
+          <a href="{{{shortUrl}}}" style="color: black;">{{name}}</a>
+          {{#labels}}
+          <span style="background: {{color}}; width: 20px; display: inline-block; height: 20px; margin: 0;">&nbsp;</span>
+          {{/labels}}
+          {{#idMembers}}
+            {{{renderMember}}}
+          {{/idMembers}}
+          <br/>
+          {{desc}} {{#due}}Due: {{dateFmt}}{{/due}}
+        </li>
+        {{/cards}}
+      </ul>
+    </section>
+    {{/lists}}
+
+  </body>
+</html>
+
+
+

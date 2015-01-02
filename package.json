@@ -1,0 +1,30 @@
+{
+  "name": "trello-email-summary",
+  "description": "Trello Email Summary",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dusty Candland",
+  "license": "MIT"
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"dependencies": {
+		"commander": ">=2.6.0",
+		"node-trello": ">=1.0.1",
+		"q": ">=1.2.1"
+		"underscore": ">=1.7.0"
+	},
+	"files": [
+		"lib/htmlTemplates.js",
+		"lib/trelloBoard.js",
+		"templates/mail.html",
+		"templates/member.html",
+		"vendor/mustache.js",
+		"index.js",
+		"LICENSE",
+	]	
+}
