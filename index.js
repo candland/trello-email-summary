@@ -16,13 +16,13 @@ program
     .option('-b, --board <board>', 'Trello Board ID')
     .parse(process.argv);
 
-//TrelloBoard(program.key, program.token, program.board).board()
-//.then(function(board) {
+TrelloBoard(program.key, program.token, program.board).board()
+//.then(function(board) {  // Store file to tweak template
 	//console.log(JSON.stringify(board));
 //})
-Q.nfcall(fs.readFile, "board.json", "utf-8").then(function(json) {
-	return JSON.parse(json);
-})
+//Q.nfcall(fs.readFile, "board.json", "utf-8").then(function(json) { // load stored file
+	//return JSON.parse(json);
+//})
 .then(template.appendRenderMemberFn)
 .then(template.appendFormatFns)
 .then(template.renderMail)
