@@ -10,7 +10,7 @@
   "license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "git@github.com/candland/trello-email-summary.git"
 	},
 	"dependencies": {
 		"commander": ">=2.6.0",
