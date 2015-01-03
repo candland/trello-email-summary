@@ -29,14 +29,25 @@
                     <span style="background-color: {{color}}; color: #efefef; padding: 2px; margin: 0; font-size: 10px;">
                     {{#color}}{{labelName}}{{/color}}</span>
                     {{/labels}}
-                    <br/>
-                    {{desc}} {{#due}}Due: {{dateFmt}}{{/due}}
+                    {{#desc}}<br/>{{.}}{{/desc}} 
+                    {{#due}}<br/><font color="#cc0000" style="font-size: smaller">Due: {{dateFmt}}</font>{{/due}}
+                    {{#badges.comments}}
+                      <br/>
+                      <span style="background-color: #efefef; font-size: smaller; padding: 2px; margin-left: 10px;"> 
+                      {{badges.comments}}!
+                      {{#actions.0.idMemberCreator}}{{{renderMember}}}{{/actions.0.idMemberCreator}}
+                      {{actions.0.data.text}}
+                      </span>
+                    {{/badges.comments}}
                   </li>
                   {{/cards}}
                 </ul>
               </td>
             </tr>
             {{/lists}}
+            <tr>
+              <td><p>&nbsp;</p></td>
+            </tr>
           </table>
         </td>
       </tr>
