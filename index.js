@@ -6,7 +6,7 @@ var program = require('commander');
 var Q = require('q');
 var fs = require('fs');
 
-var TrelloBoard = require('./lib/TrelloBoard.js');
+var TrelloBoard = require('./lib/trelloBoard.js');
 var template = require('./lib/htmlTemplates.js');
 
 program
@@ -24,6 +24,7 @@ TrelloBoard(program.key, program.token, program.board).board()
 	//return JSON.parse(json);
 //})
 .then(template.appendRenderMemberFn)
+.then(template.appendLabelNameFn)
 .then(template.appendFormatFns)
 .then(template.renderMail)
 .then(console.log)

@@ -1,36 +1,46 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>{{name}}</title>
   </head>
-  <body style="background: {{prefs.backgroundColor}}; font-family: verdana, sans-serif; font-size: 90%">
-    <header style="background: {{prefs.backgroundColor}}; margin: 15px 0;">
-      <h1 style="color: white;">{{name}}
-        <a href="{{{shortUrl}}}" style="color: white;">&gt;</a>
-      </h1>
-    </header>
-   
-    {{#lists}}
-    <section style="background: silver; padding: 8px; margin: 10px;">
-      <h2 style="margin: 0;">{{name}}</h2>
-      <ul style="background: white; list-style-type: none; margin: 0; padding: 0;">
-        {{#cards}}
-        <li style="padding: 8px">
-          <a href="{{{shortUrl}}}" style="color: black;">{{name}}</a>
-          {{#labels}}
-          <span style="background: {{color}}; width: 20px; display: inline-block; height: 20px; margin: 0;">&nbsp;</span>
-          {{/labels}}
-          {{#idMembers}}
-            {{{renderMember}}}
-          {{/idMembers}}
-          <br/>
-          {{desc}} {{#due}}Due: {{dateFmt}}{{/due}}
-        </li>
-        {{/cards}}
-      </ul>
-    </section>
-    {{/lists}}
-
+  <body style="font-family: verdana, sans-serif; font-size: smaller;">
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top">
+          <table border="0" cellpadding="10" cellspacing="0" width="100%" id="emailContainer">
+            <tr>
+              <th align="center" valign="top" bgcolor="{{prefs.backgroundColor}}">
+                <h1 style="color: #ffffff; margin: 0;">
+                  <a href="{{{shortUrl}}}" style="color: #ffffff; text-decoration: none;">{{name}}</a>
+                </h1>
+              </th>
+            </tr>
+            {{#lists}}
+            <tr>
+              <td align="left" valign="top">
+                <h2 style="margin: 0; padding: 10px; background-color: #efefef">{{name}}</h2>
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                  {{#cards}}
+                  <li style="padding: 8px; border-top: solid 1px #dedede;">
+                    <a href="{{{shortUrl}}}" style="color: black;">{{name}}</a>
+                    {{#idMembers}}
+                      {{{renderMember}}}
+                    {{/idMembers}}
+                    {{#labels}}
+                    <span style="background-color: {{color}}; color: #efefef; padding: 2px; margin: 0; font-size: 10px;">
+                    {{#color}}{{labelName}}{{/color}}</span>
+                    {{/labels}}
+                    <br/>
+                    {{desc}} {{#due}}Due: {{dateFmt}}{{/due}}
+                  </li>
+                  {{/cards}}
+                </ul>
+              </td>
+            </tr>
+            {{/lists}}
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
 
