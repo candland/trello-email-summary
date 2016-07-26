@@ -21,6 +21,9 @@
                 <ul style="list-style-type: none; margin: 0; padding: 0;">
                   {{#cards}}
                   <li style="padding: 8px; border-top: solid 1px #dedede;">
+                    {{#cover}}
+                      <img src="{{url}}" width="600" height="{{height}}"><br>
+                    {{/cover}}
                     <a href="{{{shortUrl}}}" style="color: black;">{{name}}</a>
                     {{#idMembers}}
                       {{{renderMember}}}
